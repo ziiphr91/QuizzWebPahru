@@ -1,3 +1,4 @@
+
 :root {
     --primary: #6366f1;
     --success: #22c55e;
@@ -26,8 +27,10 @@ body {
     box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
 }
 
-h1 { font-size: 1.5rem; margin-bottom: 20px; color: #4338ca; }
-h1 span { background: #4338ca; color: white; padding: 2px 8px; border-radius: 6px; font-size: 0.8rem; }
+h1 {
+    font-size: 1.5rem;
+    color: #4338ca;
+}
 
 .progress-container {
     background: #e2e8f0;
@@ -60,10 +63,27 @@ h1 span { background: #4338ca; color: white; padding: 2px 8px; border-radius: 6p
     font-weight: 600;
 }
 
-.option:hover { border-color: var(--primary); background: #f8fafc; }
-.option.selected { border-color: var(--primary); background: #eef2ff; }
-.option.correct { background: #dcfce7; border-color: var(--success); color: #166534; }
-.option.wrong { background: #fee2e2; border-color: var(--danger); color: #991b1b; }
+.option:hover {
+    border-color: var(--primary);
+    background: #f8fafc;
+}
+
+.option.selected {
+    border-color: var(--primary);
+    background: #eef2ff;
+}
+
+.option.correct {
+    background: #dcfce7;
+    border-color: var(--success);
+    color: #166534;
+}
+
+.option.wrong {
+    background: #fee2e2;
+    border-color: var(--danger);
+    color: #991b1b;
+}
 
 button {
     margin-top: 30px;
@@ -77,9 +97,11 @@ button {
     cursor: pointer;
 }
 
-button:disabled { background: #cbd5e1; cursor: not-allowed; }
+button:disabled {
+    background: #cbd5e1;
+    cursor: not-allowed;
+}
 
-/* Modal Styles */
 .modal {
     display: none;
     position: fixed;
@@ -106,22 +128,20 @@ button:disabled { background: #cbd5e1; cursor: not-allowed; }
     margin: 20px 0;
 }
 
-.stat-card { padding: 15px; border-radius: 15px; }
-.stat-card.correct { background: #dcfce7; color: #166534; }
-.stat-card.wrong { background: #fee2e2; color: #991b1b; }
-
-.score-circle {
-    width: 120px; height: 120px;
-    border: 8px solid var(--primary);
-    border-radius: 50%;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem; font-weight: 800;
+.stat-card {
+    padding: 15px;
+    border-radius: 15px;
 }
 
+.stat-card.correct {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.stat-card.wrong {
+    background: #fee2e2;
+    color: #991b1b;
+}
 
 * {
     margin: 0;
@@ -158,9 +178,23 @@ body {
     border: 1px solid rgba(255,255,255,0.1);
 }
 
-header h1 {
-    text-align: center;
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 20px;
+}
+
+#timer {
+    background: rgba(255,255,255,0.08);
+    padding: 10px 16px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #38bdf8;
+}
+
+header h1 {
     font-size: 2rem;
 }
 
@@ -326,16 +360,28 @@ button {
     margin-bottom: 8px;
 }
 
-/* RESPONSIVE HP */
 @media (max-width: 600px) {
     body {
         padding: 10px;
-        align-items: flex-start;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
     }
 
     .container {
         padding: 20px;
         border-radius: 15px;
+    }
+
+    .header-top {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    #timer {
+        font-size: 14px;
+        padding: 8px 12px;
     }
 
     header h1 {
@@ -366,3 +412,4 @@ button {
         padding: 20px;
     }
 }
+
