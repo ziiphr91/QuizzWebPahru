@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ulangan</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="glass-bg"></div>
+
+    <div class="container">
+
+        <header>
+            <h1>Quizz</h1>
+
+            <div class="progress-container">
+                <div class="progress-bar" id="progress"></div>
+            </div>
+
+            <p id="question-number">Soal 1 dari 20</p>
+        </header>
+
+        <main id="quiz-body">
+            <h2 id="question-text">Memuat pertanyaan...</h2>
+
+            <div class="options" id="options-container"></div>
+        </main>
+
+        <footer id="quiz-footer">
+            <button id="next-btn" disabled>Pertanyaan Selanjutnya</button>
+        </footer>
+
+        <!-- Nomor Soal -->
+        <div class="question-list" id="question-list"></div>
+
+    </div>
+
+    <!-- Modal -->
+    <div id="result-modal" class="modal">
+        <div class="modal-content">
+            <h2>Hasil Ujian Anda</h2>
+
+            <div class="stats-grid">
+                <div class="stat-card correct">
+                    <span class="label">Benar</span>
+                    <span id="correct-count">0</span>
+                </div>
+
+                <div class="stat-card wrong">
+                    <span class="label">Salah</span>
+                    <span id="wrong-count">0</span>
+                </div>
+            </div>
+
+            <button onclick="location.reload()">Ulangi Ujian</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
