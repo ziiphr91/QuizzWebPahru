@@ -16,13 +16,18 @@
     <div class="container">
 
         <header>
-            <h1>Quizz</h1>
+
+            <div class="header-top">
+                <div id="timer">30:00</div>
+                <h1>Quizz</h1>
+            </div>
 
             <div class="progress-container">
                 <div class="progress-bar" id="progress"></div>
             </div>
 
             <p id="question-number">Soal 1 dari 20</p>
+
         </header>
 
         <main id="quiz-body">
@@ -35,12 +40,10 @@
             <button id="next-btn" disabled>Pertanyaan Selanjutnya</button>
         </footer>
 
-        <!-- Nomor Soal -->
         <div class="question-list" id="question-list"></div>
 
     </div>
 
-    <!-- Modal -->
     <div id="result-modal" class="modal">
         <div class="modal-content">
             <h2>Hasil Ujian Anda</h2>
