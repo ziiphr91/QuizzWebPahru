@@ -13,13 +13,38 @@
 
     <div class="glass-bg"></div>
 
-    <div class="container">
+    <div class="auth-container" id="auth-container">
+
+        <div class="auth-box">
+
+            <h2 id="auth-title">Login</h2>
+
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+
+            <button id="auth-btn">Login</button>
+
+            <p id="toggle-auth">
+                Belum punya akun?
+                <span id="toggle-text">Daftar</span>
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="container" id="quiz-container" style="display:none;">
 
         <header>
 
             <div class="header-top">
                 <div id="timer">30:00</div>
                 <h1>Soal Ulangan</h1>
+            </div>
+
+            <div class="user-info">
+                <span id="user-display"></span>
+                <button id="logout-btn">Logout</button>
             </div>
 
             <div class="progress-container">
@@ -42,6 +67,15 @@
 
         <div class="question-list" id="question-list"></div>
 
+        <div class="history-box">
+
+            <div class="history-header">
+                <h3>Riwayat Ujian</h3>
+            </div>
+
+            <div id="history-list"></div>
+        </div>
+
     </div>
 
     <div id="result-modal" class="modal">
@@ -60,7 +94,7 @@
                 </div>
             </div>
 
-            <button onclick="location.reload()">Ulangi Ujian</button>
+            <button onclick="closeResultModal()">Tutup</button>
         </div>
     </div>
 
