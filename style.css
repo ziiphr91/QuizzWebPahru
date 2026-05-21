@@ -1,146 +1,9 @@
-
 :root {
     --primary: #6366f1;
     --success: #22c55e;
     --danger: #ef4444;
-    --glass: rgba(255, 255, 255, 0.8);
-}
-
-body {
-    margin: 0;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-    color: #1e293b;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-.container {
-    background: var(--glass);
-    backdrop-filter: blur(12px);
-    width: 90%;
-    max-width: 700px;
-    border-radius: 24px;
-    padding: 40px;
-    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
-}
-
-h1 {
-    font-size: 1.5rem;
-    color: #4338ca;
-}
-
-.progress-container {
-    background: #e2e8f0;
-    height: 8px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-.progress-bar {
-    background: var(--primary);
-    width: 0%;
-    height: 100%;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-.options {
-    display: grid;
-    gap: 12px;
-    margin-top: 25px;
-}
-
-.option {
-    background: white;
-    padding: 16px 20px;
-    border: 2px solid #e2e8f0;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: 0.2s;
-    font-weight: 600;
-}
-
-.option:hover {
-    border-color: var(--primary);
-    background: #f8fafc;
-}
-
-.option.selected {
-    border-color: var(--primary);
-    background: #eef2ff;
-}
-
-.option.correct {
-    background: #dcfce7;
-    border-color: var(--success);
-    color: #166534;
-}
-
-.option.wrong {
-    background: #fee2e2;
-    border-color: var(--danger);
-    color: #991b1b;
-}
-
-button {
-    margin-top: 30px;
-    width: 100%;
-    padding: 16px;
-    border: none;
-    border-radius: 12px;
-    background: var(--primary);
-    color: white;
-    font-weight: 800;
-    cursor: pointer;
-}
-
-button:disabled {
-    background: #cbd5e1;
-    cursor: not-allowed;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.8);
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-.modal-content {
-    background: white;
-    padding: 40px;
-    border-radius: 30px;
-    text-align: center;
-    max-width: 400px;
-    width: 100%;
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin: 20px 0;
-}
-
-.stat-card {
-    padding: 15px;
-    border-radius: 15px;
-}
-
-.stat-card.correct {
-    background: #dcfce7;
-    color: #166534;
-}
-
-.stat-card.wrong {
-    background: #fee2e2;
-    color: #991b1b;
+    --danger-hover: #dc2626;
+    --glass: rgba(255, 255, 255, 0.08);
 }
 
 * {
@@ -168,10 +31,50 @@ body {
     z-index: -1;
 }
 
+.auth-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-box {
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.auth-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.auth-box input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    font-size: 15px;
+}
+
+#toggle-auth {
+    text-align: center;
+    margin-top: 15px;
+    color: #cbd5e1;
+}
+
+#toggle-text {
+    color: #38bdf8;
+    cursor: pointer;
+    font-weight: bold;
+}
+
 .container {
     width: 100%;
     max-width: 700px;
-    background: rgba(255,255,255,0.08);
+    background: var(--glass);
     backdrop-filter: blur(15px);
     border-radius: 20px;
     padding: 30px;
@@ -196,6 +99,39 @@ body {
 
 header h1 {
     font-size: 2rem;
+}
+
+.user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+}
+
+/* Tombol Logout Diperbarui Lebih Bagus */
+#logout-btn {
+    flex: 0;
+    width: auto;
+    padding: 6px 14px;
+    background: var(--danger);
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background 0.2s, transform 0.1s;
+}
+
+#logout-btn:hover {
+    background: var(--danger-hover);
+    transform: translateY(-1px);
+}
+
+#logout-btn:active {
+    transform: translateY(0);
 }
 
 .progress-container {
@@ -313,6 +249,62 @@ button {
     border: 2px solid #22c55e;
 }
 
+.history-box {
+    margin-top: 30px;
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.history-box h3 {
+    margin-bottom: 15px;
+}
+
+.history-item {
+    background: rgba(255,255,255,0.06);
+    padding: 14px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.history-info {
+    flex: 1;
+}
+
+/* Tombol Hapus Diperbarui Lebih Bagus */
+.delete-history-btn {
+    flex: 0;
+    width: auto;
+    padding: 6px 12px;
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    color: #f87171;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 6px;
+    margin-top: 0;
+    transition: all 0.2s;
+}
+
+.delete-history-btn:hover {
+    background: var(--danger);
+    color: white;
+    border-color: var(--danger);
+}
+
 .modal {
     position: fixed;
     inset: 0;
@@ -361,21 +353,12 @@ button {
 }
 
 @media (max-width: 600px) {
-    body {
-        padding: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-    }
-
     .container {
         padding: 20px;
         border-radius: 15px;
     }
 
     .header-top {
-        flex-direction: row;
         gap: 10px;
     }
 
@@ -411,5 +394,14 @@ button {
     .modal-content {
         padding: 20px;
     }
-}
 
+    .history-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .delete-history-btn {
+        align-self: flex-end;
+    }
+}
